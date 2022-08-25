@@ -2,12 +2,10 @@ const mongoose = require("mongoose")
 
 mongoose
     .connect(
-        "mongodb+srv://breezydev:<password>@cluster0.0bojka6.mongodb.net/test",
+        "mongodb+srv://"+ process.env.DB_USER_PWD +"@cluster0.0bojka6.mongodb.net/test",
         {
             useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true,
-            useFindAndModify: false,
+            useUnifiedTopology: true
         }
     )
     .then(() => console.log("Connected to MongoDB"))
